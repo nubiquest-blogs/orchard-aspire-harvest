@@ -1,0 +1,90 @@
+{
+  "name": "",
+  "displayName": "",
+  "description": "",
+  "author": "",
+  "website": "",
+  "version": "",
+  "issetuprecipe": false,
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "ReplaceContentDefinition",
+      "ContentTypes": [
+        {
+          "Name": "Category",
+          "DisplayName": "Category",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            },
+            "FullTextAspectSettings": {
+              "IncludeFullTextTemplate": false,
+              "IncludeBodyAspect": true,
+              "IncludeDisplayText": true
+            },
+            "GraphQLContentTypeSettings": {
+              "Hidden": false
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Category",
+              "Name": "Category",
+              "Settings": {}
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "MarkdownBodyPart",
+              "Name": "MarkdownBodyPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "ContentParts": []
+    },
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "46bfryjpf8tx21pc0wr5ptqade",
+          "ContentItemVersionId": "4v6wxarwmsfw57ftx1r6c1c7ch",
+          "ContentType": "Category",
+          "DisplayText": null,
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-11-02T17:22:02.259684Z",
+          "PublishedUtc": "2025-11-02T17:22:02.31381Z",
+          "CreatedUtc": "2025-11-02T17:22:02.259684Z",
+          "Owner": "4j3mcs21nzf7x7p5rcyxb0sydz",
+          "Author": "amine",
+          "Category": {},
+          "AliasPart": {
+            "Alias": "ai"
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "# Artificial Intelligence\r\n\r\nArtificial intelligence (AI) is technology that enables computers and machines to simulate human learning, comprehension, problem solving, *decision making*, creativity and autonomy.\r\n\r\n- Machine Learning\r\n- Generative AI\r\n- Deep Learning"
+          }
+        }
+      ]
+    }
+  ]
+}

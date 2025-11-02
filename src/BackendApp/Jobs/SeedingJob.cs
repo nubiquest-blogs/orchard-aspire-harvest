@@ -1,4 +1,5 @@
 using BackendApp.Database;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackendApp.Jobs;
 
@@ -27,7 +28,11 @@ public class SeedingJob(IServiceScopeFactory services, ILogger<SeedingJob> logge
 
     private async Task CreateCategory(AppDbContext db, string id, string name, CancellationToken stoppingToken)
     {
-        var category = new CategoryEntity() { Id = id, Name = name };
-        await db.Categories.AddAsync(category, stoppingToken);
+        var category = await db.Categories.FirstOrDefaultAsync(e => e.Id == id, stoppingToken);
+        if (category is null)
+        {
+            category = new CategoryEntity() { Id = id, Name = name };
+            await db.Categories.AddAsync(category, stoppingToken);
+        }
     }
 }

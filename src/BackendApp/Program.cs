@@ -16,7 +16,7 @@ public class Program
 
         builder.Services.AddDbContextPool<AppDbContext>(o =>
             o.UseMySQL(builder.Configuration.GetConnectionString("AppDb") ??
-                       throw new InvalidOperationException("Connection string 'mysqldb' not found.")));
+                       throw new InvalidOperationException("Connection string 'AppDb' not found.")));
 
         builder.Services.AddHostedService<SeedingJob>();
 

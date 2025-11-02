@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrchardDemoHost", "OrchardD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrchardDemoServiceDefaults", "OrchardDemoServiceDefaults\OrchardDemoServiceDefaults.csproj", "{10D8006B-047E-4D41-B955-23114B623697}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentApp", "ContentApp\ContentApp.csproj", "{BA139976-0CFC-46B0-B4DA-EE5BF1DB16A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{10D8006B-047E-4D41-B955-23114B623697}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10D8006B-047E-4D41-B955-23114B623697}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10D8006B-047E-4D41-B955-23114B623697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA139976-0CFC-46B0-B4DA-EE5BF1DB16A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA139976-0CFC-46B0-B4DA-EE5BF1DB16A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA139976-0CFC-46B0-B4DA-EE5BF1DB16A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA139976-0CFC-46B0-B4DA-EE5BF1DB16A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

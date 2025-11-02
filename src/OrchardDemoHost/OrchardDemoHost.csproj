@@ -14,11 +14,13 @@
     <ItemGroup>
         <PackageReference Include="Aspire.Hosting.AppHost" Version="9.5.2" />
         <PackageReference Include="Aspire.Hosting.MySql" Version="9.5.2" />
+        <PackageReference Include="Aspire.Hosting.Azure.Storage" Version="9.5.2" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\BackendApp\BackendApp.csproj" />
       <ProjectReference Include="..\ClientApp\ClientApp.csproj" />
+      <ProjectReference Include="..\ContentApp\ContentApp.csproj" />
     </ItemGroup>
 
 </Project>
