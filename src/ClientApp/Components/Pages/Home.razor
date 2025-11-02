@@ -1,0 +1,49 @@
+﻿@rendermode InteractiveServer
+
+@page "/"
+@using ClientApp.Models
+@using ClientApp.Services
+
+@inject ICategoryService Categories
+
+<PageTitle>Home</PageTitle>
+
+<h1>Category</h1>
+
+<div>
+    <input @bind="_id" placeholder="Enter ID" type="text"/>
+</div>
+<div>
+    <button @onclick="LoadCategory">Call 2</button>
+</div>
+
+@if (_category is not null)
+{
+    <h3>@_category.Id</h3>
+    <p><strong>@_category.Name</strong></p>
+}
+
+@if(_error != null)
+{
+    <h3>Call failed</h3>
+    <p>@_error</p>
+}
+@code
+{
+    private EnrichedCategoryModel? _category;
+    private string? _error;
+    private string? _id;
+    
+    private async Task LoadCategory()
+    {
+        _error = null;
+        try
+        {
+            _category = await Categories.GetCategory(_id!);
+        }
+        catch (Exception ex)
+        {
+            _error = $"Call failed: {ex.Message}";
+        }
+    }
+}
