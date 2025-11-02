@@ -11,4 +11,8 @@
       <ProjectReference Include="..\OrchardDemoServiceDefaults\OrchardDemoServiceDefaults.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Aspire.StackExchange.Redis" Version="9.5.2" />
+    </ItemGroup>
+
 </Project>

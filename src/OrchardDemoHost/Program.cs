@@ -18,7 +18,6 @@ var apiBackend = builder.AddProject<BackendApp>("backend-apis")
 var storage = builder.AddAzureStorage("storage")
     .RunAsEmulator(azurite =>
 {
-    azurite.WithLifetime(ContainerLifetime.Persistent);
     azurite.WithBlobPort(10000)
         .WithQueuePort(10001)
         .WithTablePort(10002);
@@ -46,12 +45,17 @@ var contentApp = builder.AddProject<ContentApp>("content-apis")
     .WithEnvironment("OrchardCore__OrchardCore_AutoSetup__Tenants__0__DatabaseConnectionString", contentDb)
     .WithEnvironment("OrchardCore__OrchardCore_AutoSetup__Tenants__0__AdminPassword", adminPassword);
 
+// cache
+var cache = builder.AddRedis("cache");
+
 // web client
 var clientApp = builder.AddProject<ClientApp>("web-client")
     .WithReference(apiBackend)
     .WaitFor(apiBackend)
     .WithReference(contentApp)
-    .WaitFor(contentApp);
+    .WaitFor(contentApp)
+    .WithReference(cache)
+    .WaitFor(cache);
 
 
 builder.Build().Run();

@@ -14,7 +14,7 @@
     <input @bind="_id" placeholder="Enter ID" type="text"/>
 </div>
 <div>
-    <button @onclick="LoadCategory">Call 2</button>
+    <button @onclick="LoadCategory">Get Category</button>
 </div>
 
 @if (_category is not null)
@@ -39,6 +39,7 @@
     private async Task LoadCategory()
     {
         _error = null;
+        _category = null;
         try
         {
             _category = await Categories.GetCategory(_id!);
