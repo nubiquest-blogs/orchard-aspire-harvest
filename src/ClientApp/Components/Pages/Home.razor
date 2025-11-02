@@ -21,19 +21,21 @@
 {
     <h3>@_category.Id</h3>
     <p><strong>@_category.Name</strong></p>
+    @(new MarkupString(_category.Html))
 }
 
-@if(_error != null)
+@if (_error != null)
 {
     <h3>Call failed</h3>
     <p>@_error</p>
 }
+
 @code
 {
     private EnrichedCategoryModel? _category;
     private string? _error;
     private string? _id;
-    
+
     private async Task LoadCategory()
     {
         _error = null;

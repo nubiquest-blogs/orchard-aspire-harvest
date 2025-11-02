@@ -22,6 +22,11 @@ public class Program
         {
             c.BaseAddress = new Uri("https://backend-apis");
         });
+        
+        builder.Services.AddHttpClient<ContentClient>(c =>
+        {
+            c.BaseAddress = new Uri("https://content-apis");
+        });
 
         var app = builder.Build();
 

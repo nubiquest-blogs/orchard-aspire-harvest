@@ -33,7 +33,7 @@ var mediaCacheContainer = storage.AddBlobContainer("content-media-cache");
 
 var adminPassword = builder.AddParameter("admin-password", secret: true);
 
-var contentApp = builder.AddProject<ContentApp>("ContentApp")
+var contentApp = builder.AddProject<ContentApp>("content-apis")
     .WaitFor(contentDb)
     .WaitFor(shellContainer)
     .WaitFor(dpContainer)

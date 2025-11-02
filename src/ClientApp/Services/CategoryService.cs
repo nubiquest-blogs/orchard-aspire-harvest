@@ -3,17 +3,24 @@ using ClientApp.Models;
 
 namespace ClientApp.Services;
 
-public class CategoryService(BackendClient backendClient) : ICategoryService
+public class CategoryService(BackendClient backendClient, ContentClient contentClient) : ICategoryService
 {
     public async Task<EnrichedCategoryModel> GetCategory(string id)
     {
         var category = await backendClient.GetCategory(id);
 
-        return new EnrichedCategoryModel()
+        var result = new EnrichedCategoryModel
         {
             Id = category.Id,
             Name = category.Name,
-            Html = $"<h1>{category.Name}</h1><p>Category ID: {category.Id}</p>"
         };
+
+        var content = await contentClient.GetCategoryContent(id);
+        if (content != null)
+        {
+            result.Html = content.Html;
+        }
+
+        return result;
     }
 }
